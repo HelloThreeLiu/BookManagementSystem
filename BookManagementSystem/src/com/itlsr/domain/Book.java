@@ -8,14 +8,14 @@ import java.util.Date;
  */
 public class Book {
     private int id;
-    private String bookcode;
-    private String bookname;
-    private String author;
-    private String bookstype;
-    private Date entrydate;
-    private String location;
-    private String bookstatus;
-    private String amount;
+    private String bookcode;//书籍编码
+    private String bookname;//书籍名称
+    private String author;//作者
+    private String bookstype;//书籍类型
+    private Date entrydate;//入馆时间
+    private String location;//馆藏地址
+    private String bookstatus;//图书状态
+    private String amount;//图书数量
 
     public Book() {
         this.id = id;
