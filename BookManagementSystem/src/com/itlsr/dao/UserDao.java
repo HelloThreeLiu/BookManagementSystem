@@ -66,13 +66,5 @@ public interface UserDao {
      */
     public int addUser(User user) throws Exception;
 
-    /**
-     *修改密码
-     * @param user
-     * @return
-     * @throws Exception
-     */
-    public int updatePassword(User user) throws Exception;
-
 }
 

@@ -52,6 +52,9 @@ public class UpdateBookServlet extends HttpServlet {
             //图书数量
             String amount = req.getParameter("amount");
 
+            String ids = req.getParameter("id");
+            int id = Integer.parseInt(ids);
+
             Book book = new Book();
             book.setBookcode(bookcode);
             book.setBookname(bookname);
@@ -61,6 +64,7 @@ public class UpdateBookServlet extends HttpServlet {
             book.setLocation(location);
             book.setBookstatus(bookstatus);
             book.setAmount(amount);
+            book.setId(id);
 
 
             //调用业务层

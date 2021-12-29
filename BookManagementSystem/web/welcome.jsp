@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 刘思睿
-  Date: 2021/12/27
-  Time: 17:40
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -24,11 +18,7 @@
         <a href="login.html">退出</a>
     </div>
 </header>
-<!--时间-->
-<section class="publicTime">
-    <span id="time">2015年1月1日 11:11  星期一</span>
-    <a href="#">温馨提示：为了能正常浏览，请使用高版本浏览器！（IE10+）</a>
-</section>
+
 <!--主体内容-->
 <section class="publicMian">
     <div class="left">
@@ -50,9 +40,7 @@
         </div>
     </div>
 </section>
-<footer class="footer">
-    版权归千锋教育
-</footer>
+
 <script src="js/time.js"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ public class BaseDao {
     public boolean getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3333/bookmanagement?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
+            String url = "jdbc:mysql://localhost:3306/bookmanagement?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
             connection = DriverManager.getConnection(url, "root", "20010214");
         } catch (SQLException e) {
             e.printStackTrace();

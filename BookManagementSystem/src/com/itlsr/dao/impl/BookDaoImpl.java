@@ -102,7 +102,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
 
     @Override
     public int updateBook(Book book) throws Exception {
-        String sql = "update user set bookcode=?,bookname=?,author=?,bookstype=?,entrydate=?,location=?,bookstatus=?,amount=? where id=?";
+        String sql = "update book set bookcode=?,bookname=?,author=?,bookstype=?,entrydate=?,location=?,bookstatus=?,amount=? where id=?";
 
         Object[] params={book.getBookcode(),book.getBookname(),book.getAuthor(),book.getBookstype(),book.getEntrydate(),book.getLocation(),book.getBookstatus(),book.getAmount(),book.getId()};
 

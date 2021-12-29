@@ -52,10 +52,5 @@ public class UserServiceImpl implements UserService {
         return userDao.addUser(user);
     }
 
-    @Override
-    public int updatePassword(User user) throws Exception {
-        return userDao.updatePassword(user);
-    }
-
 
 }
