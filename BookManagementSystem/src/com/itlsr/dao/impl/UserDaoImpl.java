@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * @author liusr
  * @create 2021-12-27
+ * 用户Dao接口实现类
  */
 public class UserDaoImpl extends BaseDao implements UserDao {
     //登录
@@ -34,19 +35,23 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         //创建集合对象
         List<User> list = new ArrayList<>();
         List<Object> obj=new ArrayList<Object>();
+        //创建string builder对象
         StringBuilder stringBuilder=new StringBuilder();
         //sql语句
         String sql = "select * from user";
         stringBuilder.append(sql);
+        //判断，若username不为null，则加上如下sql语句，进行模糊查询
         if(username !=null && !"".equals(username)){
             stringBuilder.append(" where username like ?");
             obj.add("%"+username+"%");
         }
+        //分页的sql语句
         stringBuilder.append(" limit ?,?");
+        //将参数加入集合
         obj.add((pageNum-1)*pageSize);
         obj.add(pageSize);
-        //创建集合
-        Object[] params = obj.toArray();
+        //创建数组
+        Object[] params = obj.toArray();//将集合转为数组
         //调用方法
         ResultSet resultSet = this.executeSQL(stringBuilder.toString(), params);
 
@@ -90,6 +95,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return count;
     }
 
+    //查看信息
     @Override
     public User viewUser(int id) throws Exception {
         User user = new User();
@@ -113,6 +119,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return user;
     }
 
+    //更新用户信息
     @Override
     public int updateUser(User user) throws Exception {
 
@@ -127,6 +134,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
     }
 
+    //删除用户信息
     @Override
     public int deleteUser(int id) throws Exception {
         String sql="delete from user where id=?";
@@ -135,6 +143,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return i;
     }
 
+    //添加新用户
     @Override
     public int addUser(User user) throws Exception {
         String sql="insert into user(username,password,age,sex,phone,address) values(?,?,?,?,?,?)";

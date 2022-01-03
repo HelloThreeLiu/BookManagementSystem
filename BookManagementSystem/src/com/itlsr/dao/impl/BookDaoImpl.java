@@ -3,7 +3,6 @@ package com.itlsr.dao.impl;
 import com.itlsr.dao.BaseDao;
 import com.itlsr.dao.BookDao;
 import com.itlsr.domain.Book;
-import com.itlsr.domain.User;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -12,8 +11,10 @@ import java.util.List;
 /**
  * @author liusr
  * @create 2021-12-28
+ * 书籍Dao接口实现类
  */
 public class BookDaoImpl extends BaseDao implements BookDao {
+    //查询（查询所有和模糊查询并分页显示）
     @Override
     public List<Book> findBook(int pageNum,int pageSize,String bookname) throws Exception {
         //创建集合对象
@@ -53,6 +54,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         return list;
     }
 
+    //获取总数量
     @Override
     public int getTotalCount(String bookname) throws Exception {
         int count = 0;
@@ -75,6 +77,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         return count;
     }
 
+    //查看信息
     @Override
     public Book viewBook(int id) throws Exception {
         Book book = new Book();
@@ -100,6 +103,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         return book;
     }
 
+    //更新书籍信息
     @Override
     public int updateBook(Book book) throws Exception {
         String sql = "update book set bookcode=?,bookname=?,author=?,bookstype=?,entrydate=?,location=?,bookstatus=?,amount=? where id=?";
@@ -111,6 +115,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         return i;
     }
 
+    //删除书籍信息
     @Override
     public int deleteBook(int id) throws Exception {
         String sql="delete from book where id=?";
@@ -119,6 +124,7 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         return i;
     }
 
+    //添加书籍信息
     @Override
     public int addBook(Book book) throws Exception {
         String sql="insert into book(bookcode,bookname,author,bookstype,entrydate,location,bookstatus,amount) values(?,?,?,?,?,?,?,?)";

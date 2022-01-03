@@ -3,6 +3,7 @@ package com.itlsr.utils;
 /**
  * @author liusr
  * @create 2021-12-28
+ * 分页类
  */
 public class PageSupport {
     //定义当前页

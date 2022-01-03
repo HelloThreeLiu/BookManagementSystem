@@ -17,6 +17,7 @@ import java.util.Date;
 /**
  * @author liusr
  * @create 2021-12-28
+ * 更新书籍信息
  */
 @WebServlet("/updateBook")
 public class UpdateBookServlet extends HttpServlet {

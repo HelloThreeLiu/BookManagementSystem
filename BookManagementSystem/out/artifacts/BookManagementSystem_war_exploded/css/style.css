@@ -5,8 +5,8 @@
 
 /*登录页面*/
 .loginBox {
-    width: 1500px;
-    height: 750px;
+    width: 1520px;
+    height: 800px;
     margin: 0 auto;
     background: url("../images/login_bg.jpg") 0 0 no-repeat;
 }

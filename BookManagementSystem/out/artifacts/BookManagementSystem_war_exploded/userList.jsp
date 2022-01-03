@@ -19,7 +19,7 @@
     <h1>图书管理系统</h1>
     <div class="publicHeaderR">
         <p><span>下午好！</span><span style="color: #fff21b"> ${name}</span> , 欢迎你！</p>
-        <a href="login.html">退出</a>
+        <a href="login.jsp">退出</a>
     </div>
 </header>
 

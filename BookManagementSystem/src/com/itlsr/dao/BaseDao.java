@@ -14,11 +14,12 @@ public class BaseDao {
 
     private ResultSet resultSet;
 
-    //创建链接
+    //创建链接(这里的端口号，用户名，密码，数据库名都要正确，否则链接不上)
     public boolean getConnection() {
         try {
+            //mysql8.0需要加cj
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/bookmanagement?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
+            String url = "jdbc:mysql://localhost:3333/bookmanagement?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
             connection = DriverManager.getConnection(url, "root", "20010214");
         } catch (SQLException e) {
             e.printStackTrace();

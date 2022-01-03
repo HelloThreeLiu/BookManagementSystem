@@ -5,17 +5,18 @@ import java.util.Date;
 /**
  * @author liusr
  * @create 2021-12-27
+ * 书籍类
  */
 public class Book {
-    private int id;
-    private String bookcode;
-    private String bookname;
-    private String author;
-    private String bookstype;
-    private Date entrydate;
-    private String location;
-    private String bookstatus;
-    private String amount;
+    private int id;//书籍id
+    private String bookcode;//书籍编码
+    private String bookname;//书籍名称
+    private String author;//作者
+    private String bookstype;//书籍类型
+    private Date entrydate;//入馆时间
+    private String location;//馆藏地址
+    private String bookstatus;//书籍状态
+    private String amount;//书籍数量
 
     public Book() {
         this.id = id;

@@ -3,6 +3,7 @@ package com.itlsr.domain;
 /**
  * @author liusr
  * @create 2021-12-27
+ * 用户类
  */
 public class User {
     private int id;//用户id
