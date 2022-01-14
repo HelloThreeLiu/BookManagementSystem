@@ -30,7 +30,7 @@
                 <li><a href="billList.html">账单管理</a></li>
                 <li ><a href="providerList.html">供应商管理</a></li>
                 <li id="active"><a href="userList.html">用户管理</a></li>
-                <li><a href="/passwordServlet">密码修改</a></li>
+                <li><a href="updatePassword.jsp">密码修改</a></li>
                 <li><a href="login.html">退出系统</a></li>
             </ul>
         </nav>

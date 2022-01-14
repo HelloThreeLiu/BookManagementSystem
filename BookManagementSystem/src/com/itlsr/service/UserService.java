@@ -66,4 +66,11 @@ public interface UserService {
      */
     public int addUser(User user) throws Exception;
 
+    /**
+     * 修改密码
+     * @param user
+     * @return
+     * @throws Exception
+     */
+    public int updatePassWord(User user) throws Exception;
 }

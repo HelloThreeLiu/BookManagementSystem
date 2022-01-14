@@ -25,17 +25,59 @@
 ## 四、功能简介
 
 * 登录功能
+
 * 用户信息管理功能
+
 * * 用户信息查询（模糊查询，全部查询）并分页 显示
   * 用户信息增添
   * 用户信息修改
   * 用户信息删除
+  
 * 图书信息管理功能
+
 * * 图书信息查询（模糊查询，全部查询）并分页 显示
   * 图书信息增添
   * 图书信息修改
   * 图书信息删除
+  
 * 修改密码（未完成）
+
+* * 修改密码报错
+
+  * ```java
+    异常信息
+    java.lang.NumberFormatException: For input string: ""
+    	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+    	at java.lang.Integer.parseInt(Integer.java:592)
+    	at java.lang.Integer.parseInt(Integer.java:615)
+    	at com.itlsr.web.UpdatePasswordServlet.doPost(UpdatePasswordServlet.java:34)
+    	at com.itlsr.web.UpdatePasswordServlet.doGet(UpdatePasswordServlet.java:70)
+    	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+    	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+    	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+    	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+    	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+    	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+    	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+    	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+    	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+    	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+    	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+    	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+    	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+    	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+    	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+    	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+    	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+    	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+    	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+    	at java.lang.Thread.run(Thread.java:748)
+    ```
+
 * 退出系统
 
 ## 五、数据库设计

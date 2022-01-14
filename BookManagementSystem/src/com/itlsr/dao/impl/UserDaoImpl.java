@@ -152,4 +152,12 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         return i;
     }
 
+    @Override
+    public int updatePassWord(User user) throws Exception {
+        String sql = "update user set password=? where id=?";
+        Object[] params={user.getPassword(),user.getId()};
+        int i = this.executeUpdate(sql, params);
+        return i;
+    }
+
 }

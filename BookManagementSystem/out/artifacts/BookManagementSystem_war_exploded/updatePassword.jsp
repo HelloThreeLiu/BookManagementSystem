@@ -28,7 +28,7 @@
             <ul class="list">
                 <li><a href="/bookList">图书管理</a></li>
                 <li><a href="/userList">用户管理</a></li>
-                <li id="active"><a href="password.jsp">密码修改</a></li>
+                <li id="active"><a href="updatePassword.jsp">密码修改</a></li>
                 <li><a href="login.jsp">退出系统</a></li>
             </ul>
         </nav>
@@ -39,7 +39,9 @@
             <span>密码修改页面</span>
         </div>
         <div class="providerAdd">
-            <form action="/passwordServlet">
+            <form action="/updatePasswordServlet">
+
+                <input type="hidden" name="id" value="${s.id}" />
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div class="">
                     <label for="oldPassword">旧密码：</label>
@@ -47,8 +49,8 @@
                     <span>*请输入原密码</span>
                 </div>
                 <div>
-                    <label for="password">新密码：</label>
-                    <input type="password" name="password" id="password" required/>
+                    <label for="newPassword">新密码：</label>
+                    <input type="password" name="newPassword" id="newPassword" required/>
                     <span >*请输入新密码</span>
                 </div>
                 <div>
@@ -58,7 +60,7 @@
                 </div>
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
-                    <input type="button" value="保存" onclick="history.back(-1)"/>
+                    <input type="submit" value="保存" onclick="history.back(-1)"/>
                 </div>
             </form>
         </div>
