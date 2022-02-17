@@ -76,7 +76,7 @@
                 <td>${u.phone}</td>
                 <td>${u.address}</td>
                 <td>
-                    <a href="/viewUserServlet?id=${u.id}"><img src="images/read.png" alt="查看" title="查看"/></a>
+                    <a href="/viewUserServlet?id=${u.id}"><img src="images/read.PNG" alt="查看" title="查看"/></a>
                     <a href="/searchUser?id=${u.id}"><img src="images/xiugai.png" alt="修改" title="修改"/></a>
                     <a href="javascript:void(0)" class="removeUser" onclick="a('${u.id}')"><img src="images/schu.png" alt="删除" title="删除"/></a>
                 </td>

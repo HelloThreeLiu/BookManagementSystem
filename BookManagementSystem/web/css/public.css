@@ -97,7 +97,7 @@ li{
 /*左边*/
 .left{
     width: 168px;
-    background: url("images/leftBg.png") 0 0 repeat-y;
+    background: url("../images/leftBg.png") 0 0 repeat-y;
     margin-right: 10px;
     /*height: 520px;*/
     min-height: 520px;
@@ -147,7 +147,7 @@ li{
     background: url("../images/yh.png") 0  center no-repeat;
 }
 .list li:nth-child(4){
-    background: url("../images/mm.png") 0  center no-repeat;
+    background: url("../images/mm.PNG") 0  center no-repeat;
 }
 .list li:nth-child(5){
     background: url("../images/tc.png") 0  center no-repeat;

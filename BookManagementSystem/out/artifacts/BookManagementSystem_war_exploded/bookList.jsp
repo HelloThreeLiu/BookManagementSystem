@@ -78,7 +78,7 @@
                 <td>${b.bookstatus}</td>
                 <td>${b.amount}</td>
                 <td>
-                    <a href="/viewBookServlet?id=${b.id}"><img src="images/read.png" alt="查看" title="查看"/></a>
+                    <a href="/viewBookServlet?id=${b.id}"><img src="images/read.PNG" alt="查看" title="查看"/></a>
                     <a href="/searchBook?id=${b.id}"><img src="images/xiugai.png" alt="修改" title="修改"/></a>
                     <a href="javascript:void(0)" class="removeProvider" onclick="a('${b.id}')"><img src="images/schu.png" alt="删除" title="删除"/></a>
                 </td>
