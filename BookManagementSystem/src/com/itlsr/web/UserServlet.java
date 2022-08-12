@@ -19,63 +19,57 @@ import java.util.List;
  */
 @WebServlet("/userList")
 public class UserServlet extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//直接调用业务层代码
+		UserService userService = new UserServiceImpl();
 
-        //直接调用业务层代码
-        UserService userService = new UserServiceImpl();
+		//获取username
+		String username = req.getParameter("username");
 
-        //获取username
-        String username=req.getParameter("username");
+		//获取当前叶
+		String currentPageNo = req.getParameter("pageNum");
 
-        //获取当前叶
-        String currentPageNo = req.getParameter("pageNum");
+		int pageNum = 1;
+		if (null != currentPageNo && !"".equals(currentPageNo)) {
+			pageNum = Integer.parseInt(currentPageNo);//把字符串类型强制转换为int
+		}
 
-        System.out.println(currentPageNo+"=========");
+		//页面容量
+		int pageSize = 3;
 
-        int pageNum = 1;
-        if (null != currentPageNo && !"".equals(currentPageNo)){
-            pageNum=Integer.parseInt(currentPageNo);//把字符串类型强制转换为int
-        }
+		try {
+			//总页数
+			PageSupport pageSupport = new PageSupport();
 
-        System.out.println(pageNum+"========");
+			//获取总数量
+			int totalCount = userService.getTotalCount(username);
 
-        //页面容量
-        int pageSize = 3;
+			pageSupport.setPageNum(pageNum);
+			pageSupport.setPageSize(pageSize);
+			pageSupport.setTotalCount(totalCount);
+			int totalPageCount = pageSupport.getTotalPageCount();//总页数
 
+			List<User> user = userService.findUser(pageNum, pageSize, username);
 
-        try {
-            //总页数
-            PageSupport pageSupport = new PageSupport();
+			//查询不用传数据
 
-            //获取总数量
-            int totalCount = userService.getTotalCount(username);
+			if (user.size() > 0) {
+				//跳转页面
+				//把集合存储到request中
+				req.setAttribute("list", user);
+				req.setAttribute("page", pageSupport);
+				req.setAttribute("username", username);
+				req.getRequestDispatcher("/userList.jsp").forward(req, resp);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-            pageSupport.setPageNum(pageNum);
-            pageSupport.setPageSize(pageSize);
-            pageSupport.setTotalCount(totalCount);
-            int totalPageCount = pageSupport.getTotalPageCount();//总页数
-
-            List<User> user = userService.findUser(pageNum,pageSize,username);
-
-            //查询不用传数据
-
-            if (user.size()>0){
-                //跳转页面
-                //把集合存储到request中
-                req.setAttribute("list",user);
-                req.setAttribute("page",pageSupport);
-                req.setAttribute("username",username);
-                req.getRequestDispatcher("/userList.jsp").forward(req,resp);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
-    }
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.doPost(req, resp);
+	}
 }

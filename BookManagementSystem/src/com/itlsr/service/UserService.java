@@ -73,4 +73,6 @@ public interface UserService {
      * @throws Exception
      */
     public int updatePassWord(User user) throws Exception;
+
+    public User selectUserByUsername(String username) throws Exception;
 }

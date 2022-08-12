@@ -3,17 +3,17 @@
  */
 //时间
 function fn(){
-    var time = new Date();
-    var str= "";
-    var div = document.getElementById("time");
+    let time = new Date();
+    let str= "";
+    let div = document.getElementById("time");
 //    console.log(time);
-    var year = time.getFullYear();
-    var mon = time.getMonth()+1;
-    var day = time.getDate();
-    var h = time.getHours();
-    var m = time.getMinutes();
-    var s = time.getSeconds();
-    var week = time.getDay();
+    let year = time.getFullYear();
+    let mon = time.getMonth()+1;
+    let day = time.getDate();
+    let h = time.getHours();
+    let m = time.getMinutes();
+    let s = time.getSeconds();
+    let week = time.getDay();
     switch (week){
         case 0:week="日";
             break;

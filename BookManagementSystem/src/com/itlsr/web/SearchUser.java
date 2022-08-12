@@ -17,33 +17,33 @@ import java.io.IOException;
  */
 @WebServlet("/searchUser")
 public class SearchUser extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //获取id
-        String ids=req.getParameter("id");
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//获取id
+		String ids = req.getParameter("id");
 
-        int id=Integer.parseInt(ids);
+		int id = Integer.parseInt(ids);
 
-        //调用业务层
-        UserService userService=new UserServiceImpl();
+		//调用业务层
+		UserService userService = new UserServiceImpl();
 
-        try {
-            User user = userService.viewUser(id);
+		try {
+			User user = userService.viewUser(id);
 
-            if(user != null){
-                //把对象存储起来
-                req.setAttribute("s",user);
-                //页面跳转
-                req.getRequestDispatcher("/userUpdate.jsp").forward(req,resp);
-            }
+			if (user != null) {
+				//把对象存储起来
+				req.setAttribute("s", user);
+				//页面跳转
+				req.getRequestDispatcher("/userUpdate.jsp").forward(req, resp);
+			}
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
-    }
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.doPost(req, resp);
+	}
 }

@@ -18,33 +18,33 @@ import java.io.IOException;
  */
 @WebServlet("/viewBookServlet")
 public class ViewBookServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //获取id
-        String id=req.getParameter("id");
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//获取id
+		String id = req.getParameter("id");
 
-        int ids=Integer.parseInt(id);
+		int ids = Integer.parseInt(id);
 
-        //调用业务层
-        BookService bookService = new BookServiceImpl();
+		//调用业务层
+		BookService bookService = new BookServiceImpl();
 
-        try {
-           Book book = bookService.viewBook(ids);
+		try {
+			Book book = bookService.viewBook(ids);
 
-            if(book != null){
-                //把对象存储起来
-                req.setAttribute("book",book);
-                //页面跳转
-                req.getRequestDispatcher("/bookView.jsp").forward(req,resp);
-            }
+			if (book != null) {
+				//把对象存储起来
+				req.setAttribute("book", book);
+				//页面跳转
+				req.getRequestDispatcher("/bookView.jsp").forward(req, resp);
+			}
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
-    }
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.doPost(req, resp);
+	}
 }

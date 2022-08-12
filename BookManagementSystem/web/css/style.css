@@ -5,8 +5,8 @@
 
 /*登录页面*/
 .loginBox {
-    width: 1520px;
-    height: 800px;
+    width: 1500px;
+    height: 750px;
     margin: 0 auto;
     background: url("../images/login_bg.jpg") 0 0 no-repeat;
 }
@@ -21,6 +21,22 @@
     color: #fff;
     text-shadow: 2px 2px #000;
 }
+.errorHeader {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}
+.errorInput{
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 13px 14px;
+    width: 620px;
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
 
 .loginCont {
     width: 388px;
@@ -57,6 +73,7 @@ input {
 }
 
 .loginForm label {
+
     width: 20%;
     display: inline-block;
 }
@@ -88,6 +105,9 @@ input {
 
 .subBtn {
     margin-left: 70px;
+}
+.subBtn a {
+    color: #FFFFFF;
 }
 
 /*/!*登录页登录和重置按钮*!/.providerView a是供应商管理页面下信息查看也得返回按钮的样式*/

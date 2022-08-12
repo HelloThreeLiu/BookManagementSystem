@@ -14,6 +14,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
@@ -28,5 +29,7 @@
     <orderEntry type="library" name="mysql-connector-java-8.0.27" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
     <orderEntry type="library" name="standard" level="project" />
+    <orderEntry type="library" name="logback-classic-1.2.3" level="project" />
+    <orderEntry type="library" name="catalina" level="project" />
   </component>
 </module>

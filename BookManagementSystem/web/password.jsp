@@ -1,4 +1,4 @@
-<%--密码修改页面，但功能未完成--%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -28,7 +28,7 @@
             <ul class="list">
                 <li><a href="/bookList">图书管理</a></li>
                 <li><a href="/userList">用户管理</a></li>
-                <li id="active"><a href="updatePassword.jsp">密码修改</a></li>
+                <li id="active"><a href="password.jsp">密码修改</a></li>
                 <li><a href="login.jsp">退出系统</a></li>
             </ul>
         </nav>
@@ -39,9 +39,7 @@
             <span>密码修改页面</span>
         </div>
         <div class="providerAdd">
-            <form action="/updatePasswordServlet">
-
-                <input type="hidden" name="id" value="${s.id}" />
+            <form action="/passwordServlet">
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div class="">
                     <label for="oldPassword">旧密码：</label>
@@ -60,7 +58,7 @@
                 </div>
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
-                    <input type="submit" value="保存" onclick="history.back(-1)"/>
+                    <input type="submit" value="确定" />
                 </div>
             </form>
         </div>

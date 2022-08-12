@@ -15,16 +15,17 @@
     <section class="loginCont">
         <form class="loginForm" action="/LoginServlet">
             <div class="inputbox">
-                <label for="user">用户名：</label>
+                <label style="color: #FFFFFF" for="user">用户名：</label>
                 <input id="user" type="text" name="username" placeholder="请输入用户名" required/>
             </div>
             <div class="inputbox">
-                <label for="mima">密码：</label>
+                <label style="color: #ffffff" for="mima">密码：</label>
                 <input id="mima" type="password" name="password" placeholder="请输入密码" required/>
             </div>
             <div class="subBtn">
                 <input type="submit" value="登录" />
                 <input type="reset" value="重置"/>
+                <a style="color: #FFFFFF" href="register.jsp">注册</a>
             </div>
 
         </form>

@@ -29,7 +29,7 @@
             <ul class="list">
                 <li ><a href="/bookList">供应商管理</a></li>
                 <li id="active"><a href="/userList">用户管理</a></li>
-                <li><a href="updatePassword.jsp">密码修改</a></li>
+                <li><a href="/password.jsp">密码修改</a></li>
                 <li><a href="login.jsp">退出系统</a></li>
             </ul>
         </nav>
@@ -78,7 +78,7 @@
                 <div>
                     <label >图书状态：</label>
 
-                    <select name="sex">
+                    <select name="bookstatus">
                         <option value="可借">可借</option>
                         <option value="已借">已借</option>
                     </select>

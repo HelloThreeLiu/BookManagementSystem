@@ -13,36 +13,37 @@ import java.util.List;
  */
 public class BookServiceImpl implements BookService {
 
-    //调用Dao层代码
-    BookDao bookDao = new BookDaoImpl();
-    @Override
-    public List<Book> findBook(int pageNum,int pageSize,String bookname) throws Exception {
-        return bookDao.findBook(pageNum,pageSize,bookname);
-    }
+	//调用Dao层代码
+	BookDao bookDao = new BookDaoImpl();
 
-    @Override
-    public int getTotalCount(String bookname) throws Exception {
-        return bookDao.getTotalCount(bookname);
-    }
+	@Override
+	public List<Book> findBook(int pageNum, int pageSize, String bookname) throws Exception {
+		return bookDao.findBook(pageNum, pageSize, bookname);
+	}
 
-    @Override
-    public Book viewBook(int id) throws Exception {
-        return bookDao.viewBook(id);
-    }
+	@Override
+	public int getTotalCount(String bookname) throws Exception {
+		return bookDao.getTotalCount(bookname);
+	}
 
-    @Override
-    public int updateBook(Book book) throws Exception {
-        return bookDao.updateBook(book);
-    }
+	@Override
+	public Book viewBook(int id) throws Exception {
+		return bookDao.viewBook(id);
+	}
 
-    @Override
-    public int deleteBook(int id) throws Exception {
-        return bookDao.deleteBook(id);
-    }
+	@Override
+	public int updateBook(Book book) throws Exception {
+		return bookDao.updateBook(book);
+	}
 
-    @Override
-    public int addBook(Book book) throws Exception {
-        return bookDao.addBook(book);
-    }
+	@Override
+	public int deleteBook(int id) throws Exception {
+		return bookDao.deleteBook(id);
+	}
+
+	@Override
+	public int addBook(Book book) throws Exception {
+		return bookDao.addBook(book);
+	}
 
 }

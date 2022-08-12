@@ -9,64 +9,54 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
  * @author liusr
  * @create 2022-01-10
  */
-@WebServlet("/updatePasswordServlet")
+@WebServlet("/passwordServlet")
 public class UpdatePasswordServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		String oldPassword = req.getParameter("oldPassword");
+		String newPassword = req.getParameter("newPassword");
+		String reNewPassword = req.getParameter("reNewPassword");
+		HttpSession session = req.getSession();
+		String username = (String) session.getAttribute("name");
+		try {
+			//调用业务层
+			UserService userService = new UserServiceImpl();
+			User user = userService.selectUserByUsername(username);
+			String password = user.getPassword();
+			if (!password.equals(oldPassword)) {
+				req.getRequestDispatcher("/error.jsp").forward(req, resp);
+				return;
+			}
+			if (!newPassword.equals(reNewPassword)) {
+				req.getRequestDispatcher("/error.jsp").forward(req, resp);
+				return;
+			}
+			user.setPassword(newPassword);
+			int i = userService.updatePassWord(user);
+			if (i > 0) {
+				//修改成功
+				System.out.println(1);
+				req.getRequestDispatcher("/login.jsp").forward(req, resp);
+			} else {
+				System.out.println(0);
+				req.getRequestDispatcher("/error.jsp").forward(req, resp);
+			}
 
-        //获取旧密码
-        String oldPassword = req.getParameter("oldPassword");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-        //获取新密码
-        String newPassword = req.getParameter("newPassword");
-
-        //获取确认密码
-        String reNewPassword = req.getParameter("reNewPassword");
-
-        try {
-            String ids = req.getParameter("id");
-            int id = Integer.parseInt(ids);
-            User user = new User();
-            //判断密码是否一样
-            if (user.getPassword().equals(oldPassword)){
-                //判断新密码是否和确认密码一样
-                if (newPassword.equals(reNewPassword)){
-                    user.setPassword(newPassword);
-                    user.setId(id);
-                }else {
-                    req.getRequestDispatcher("/updatePassword.jsp").forward(req,resp);
-                }
-            }else {
-                req.getRequestDispatcher("/updatePassword.jsp").forward(req,resp);
-            }
-
-
-            UserService userService = new UserServiceImpl();
-            int i = userService.updatePassWord(user);
-
-            //判断是否修改成功
-            if(i>0){
-                //修改成功
-                req.getRequestDispatcher("/userList").forward(req,resp);
-            }else{
-                req.getRequestDispatcher("/updatePassword.jsp").forward(req,resp);
-            }
-        } catch (NumberFormatException e){
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
-    }
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.doPost(req, resp);
+	}
 }

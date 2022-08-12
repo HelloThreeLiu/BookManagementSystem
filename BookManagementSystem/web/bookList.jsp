@@ -30,7 +30,7 @@
             <ul class="list">
                 <li id="active"><a href="/bookList">图书管理</a></li>
                 <li><a href="/userList">用户管理</a></li>
-                <li><a href="updatePassword.jsp">密码修改</a></li>
+                <li><a href="/password.jsp">密码修改</a></li>
                 <li><a href="login.jsp">退出系统</a></li>
             </ul>
         </nav>
@@ -122,7 +122,7 @@
     <div class="removerChid">
         <h2>提示</h2>
         <div class="removeMain" >
-            <p>你确定要删除该供应商吗？</p>
+            <p>你确定要删除该书籍吗？</p>
             <a href="javascript:void(0)" onclick="b()" id="yes">确定</a>
             <a href="#" id="no">取消</a>
         </div>

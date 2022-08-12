@@ -41,7 +41,7 @@
         <div class="providerAdd">
             <form action="/updatePasswordServlet">
 
-                <input type="hidden" name="id" value="${s.id}" />
+                <input type="hidden" name="id" value="${u.id}" />
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div class="">
                     <label for="oldPassword">旧密码：</label>

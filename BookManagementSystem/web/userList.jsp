@@ -31,7 +31,7 @@
             <ul class="list">
                 <li><a href="/bookList">图书管理</a></li>
                 <li id="active"><a href="/userList">用户管理</a></li>
-                <li><a href="updatePassword.jsp">密码修改</a></li>
+                <li><a href="/password.jsp">密码修改</a></li>
                 <li><a href="login.jsp">退出系统</a></li>
             </ul>
         </nav>
@@ -42,7 +42,7 @@
             <span>用户管理页面</span>
         </div>
         <div class="search">
-            <span>用户名：</span>
+            <span>用户名：${name}</span>
             <form action="/userList">
                 <input type="text" value="${username}" name="username" placeholder="请输入用户名"/>
                 <input type="submit" value="查询"/>

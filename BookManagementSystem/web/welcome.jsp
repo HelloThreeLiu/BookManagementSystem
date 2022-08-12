@@ -15,7 +15,7 @@
 
     <div class="publicHeaderR">
         <p><span>下午好！</span><span style="color: #fff21b"> ${name}</span> , 欢迎你！</p>
-        <a href="login.html">退出</a>
+        <a href="login.jsp">退出</a>
     </div>
 </header>
 
@@ -27,7 +27,7 @@
             <ul class="list">
                 <li><a href="/bookList">图书管理</a></li>
                 <li><a href="/userList">用户管理</a></li>
-                <li><a href="updatePassword.jsp">密码修改</a></li>
+                <li><a href="/password.jsp">密码修改</a></li>
                 <li><a href="login.jsp">退出系统</a></li>
             </ul>
         </nav>

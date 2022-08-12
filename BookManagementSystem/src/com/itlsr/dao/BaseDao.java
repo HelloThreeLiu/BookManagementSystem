@@ -21,10 +21,7 @@ public class BaseDao {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3333/bookmanagement?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
             connection = DriverManager.getConnection(url, "root", "20010214");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             return false;
         }

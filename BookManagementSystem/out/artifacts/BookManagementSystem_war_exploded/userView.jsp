@@ -29,7 +29,7 @@
             <ul class="list">
                 <li ><a href="/bookList">供应商管理</a></li>
                 <li id="active"><a href="/userList">用户管理</a></li>
-                <li><a href="updatePassword.jsp">密码修改</a></li>
+                <li><a href="/password.jsp">密码修改</a></li>
                 <li><a href="login.jsp">退出系统</a></li>
             </ul>
         </nav>
